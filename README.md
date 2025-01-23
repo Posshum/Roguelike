@@ -1,6 +1,6 @@
 
 ## Wiki
-The wiki is currently being worked on at [here](https://azurepeak.miraheze.org/wiki/Main_Page).
+The wiki is currently not available. ~~being worked on at [here]()~~.
 
 ## Discord
-Come say hi on the [discord](https://discord.gg/NCFXUAgCPT), it is where the community is the most active.
+Come say hi on the [Discord is not currently available.]~~[discord]()~~, it is where the community is the most active.
