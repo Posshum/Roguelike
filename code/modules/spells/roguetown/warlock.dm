@@ -208,7 +208,7 @@
 		to_chat(user, span_notice("Your familiar appears..."))
 		chosen_one.mind.transfer_to(fam)
 		fam.fully_replace_character_name(null, "[user]'s familiar")
-		fam.get_language_holder().omnitongue = TRUE //Grants omnitongue
+		fam.grant_all_languages(omnitongue=TRUE)
 		var/valid_input_name = custom_name(user)
 		if(valid_input_name)
 			fam.fully_replace_character_name(null, "[valid_input_name]")

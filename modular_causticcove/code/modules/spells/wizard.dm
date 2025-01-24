@@ -91,7 +91,6 @@
 	name = "Shrinked"
 	desc = "I've been shrinked! (After 30 seconds, you can press this button to return to your original size.)"
 	icon_state = "debuff"
-	/datum/status_effect/buff/shrinked
 
 /atom/movable/screen/alert/status_effect/buff/shrinked/Click()
 	. = ..()
@@ -135,7 +134,6 @@
 	name = "Growth"
 	desc = "I've became bigger! (After 30 seconds, you can press this button to return to your original size.)"
 	icon_state = "debuff"
-	/datum/status_effect/buff/growth
 
 /atom/movable/screen/alert/status_effect/buff/growth/Click()
 	. = ..()

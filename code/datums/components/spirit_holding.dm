@@ -99,7 +99,7 @@
 	bound_spirit = new(parent)
 	chosen_spirit.transfer_to(bound_spirit)
 	bound_spirit.fully_replace_character_name(null, "The spirit of [name_override ? name_override : parent]")
-	bound_spirit.get_language_holder().omnitongue = TRUE //Grants omnitongue
+	bound_spirit.grant_all_languages(omnitongue=TRUE)
 
 /**
  * custom_name : Simply sends a tgui input text box to the blade asking what name they want to be called, and retries it if the input is invalid.
