@@ -710,7 +710,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(!preview_reservation)
 		CRASH("failed to reserve an area for shuttle template loading")
 	var/turf/BL = TURF_FROM_COORDS_LIST(preview_reservation.bottom_left_coords)
-	S.load(BL, centered = FALSE, register = FALSE)
+	S.load(BL, centered = FALSE)
 
 	var/affected = S.get_affected_turfs(BL, centered=FALSE)
 

@@ -1,0 +1,113 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"j" = (
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"n" = (
+/turf/closed/wall/mineral/rogue/decostone,
+/area/rogue)
+"v" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"C" = (
+/obj/machinery/light/rogue/torchholder/l,
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"F" = (
+/obj/structure/wallladder,
+/obj/effect/landmark/start,
+/obj/effect/landmark/observer_start,
+/obj/effect/landmark/start/adventurer,
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"J" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 1
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+F
+"}
+(3,1,1) = {"
+a
+a
+a
+v
+v
+a
+a
+a
+"}
+(4,1,1) = {"
+a
+a
+J
+n
+n
+j
+a
+a
+"}
+(5,1,1) = {"
+a
+a
+J
+n
+n
+j
+a
+a
+"}
+(6,1,1) = {"
+a
+a
+a
+C
+C
+a
+a
+a
+"}
+(7,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(8,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+"}

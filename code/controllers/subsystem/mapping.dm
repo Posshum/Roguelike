@@ -9,6 +9,9 @@ SUBSYSTEM_DEF(mapping)
 	var/datum/map_config/config
 	var/datum/map_config/next_map_config
 
+//For use with map dungen.
+	var/dmm_suite/maploader = null
+
 	var/map_voted = FALSE
 
 	var/list/map_templates = list()

@@ -3666,4 +3666,12 @@
 #include "modular_hearthstone\code\modules\spells\roguetown\wizard.dm"
 #include "modular_hearthstone\code\modules\spells\roguetown\spells5e\cantrips5e.dm"
 #include "modular_hearthstone\code\modules\spells\roguetown\spells5e\spellscrolls.dm"
+#include "modular_sojourn\dungen\procedural\dungeon.dm"
+#include "modular_sojourn\dungen\procedural\jp_dungeon_gen.dm"
+#include "modular_sojourn\dungen\procedural\landmarks.dm"
+#include "_maps\map_files\dungen\submaps\templates.dm"
+#include "_maps\map_files\dungen\submaps\small\small_rooms.dm"
+#include "_maps\map_files\dungen\submaps\core\large_rooms.dm"
+#include "_maps\map_files\dungen\submaps\starting\starting_rooms.dm"
+#include "_maps\map_files\dungen\submaps\ending\ending_rooms.dm"
 // END_INCLUDE

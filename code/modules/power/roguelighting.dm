@@ -163,6 +163,7 @@
 	var/can_damage = FALSE
 	var/start_fuel //Override for fueluse. Mostly used for smelters.
 	var/fuel_modifier = 1 //Modifier for firefuel
+	var/autoattach
 
 /obj/machinery/light/rogue/Initialize()
 	if(soundloop)
@@ -174,6 +175,8 @@
 	if(fueluse)
 		fueluse = fueluse - (rand(fueluse*0.1,fueluse*0.3))
 	update_icon()
+	if(autoattach)
+		auto_turn_destructive()
 	. = ..()
 
 /obj/machinery/light/rogue/weather_trigger(W)
@@ -521,6 +524,9 @@
 
 /obj/machinery/light/rogue/torchholder/l
 	dir = EAST
+
+/obj/machinery/light/rogue/torchholder/autoattach
+	autoattach = 1
 
 /obj/machinery/light/rogue/torchholder/fire_act(added, maxstacks)
 	if(torchy)
@@ -979,3 +985,27 @@
 	if(locate(/obj/machinery/light/rogue/firebowl) in get_turf(mover))
 		return 1
 	return !density
+
+/atom/proc/auto_turn_destructive()
+	//Automatically turns based on nearby walls, destroys if not found.
+	var/turf/closed/wall/T = null
+	var/gotdir = 0
+	for(var/i = 1, i <= 8; i += i)
+		T = get_ranged_target_turf(src, i, 1)
+
+		if(istype(T))
+			//If someone knows a better way to do this, let me know. -Giacom
+			switch(i)
+				if(NORTH)
+					src.setDir(SOUTH)
+					src.pixel_y = 36
+				if(SOUTH)
+					src.setDir(NORTH)
+				if(WEST)
+					src.setDir(EAST)
+				if(EAST)
+					src.setDir(WEST)
+			gotdir = dir
+			break
+	if(!gotdir)
+		QDEL_NULL(src)

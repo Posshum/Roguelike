@@ -14,10 +14,6 @@ Format:
 
 endmap
 
-map dun_manor
-	votable
-endmap
-
-map covuscruiser
+map dungenerator
 	votable
 endmap

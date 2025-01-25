@@ -52,6 +52,9 @@
 	var/neighborlay_list = list()
 	var/neighborlay_override
 
+	//Dungen related.
+	var/is_wall = FALSE 	//True for wall turfs, but also true if they contain a low wall object
+
 	vis_flags = VIS_INHERIT_PLANE|VIS_INHERIT_ID
 
 /turf/vv_edit_var(var_name, new_value)

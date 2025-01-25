@@ -1,0 +1,112 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/mineral/rogue/decostone,
+/area/rogue)
+"n" = (
+/obj/structure/wallladder{
+	dir = 1
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"z" = (
+/obj/machinery/light/rogue/torchholder/c,
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"E" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 1
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"I" = (
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"L" = (
+/obj/machinery/light/rogue/torchholder/l,
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+"V" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/tile/brick,
+/area/rogue)
+
+(1,1,1) = {"
+I
+I
+I
+I
+I
+I
+I
+I
+"}
+(2,1,1) = {"
+I
+I
+I
+I
+I
+I
+I
+I
+"}
+(3,1,1) = {"
+I
+I
+I
+V
+V
+I
+I
+I
+"}
+(4,1,1) = {"
+I
+I
+E
+a
+a
+z
+I
+I
+"}
+(5,1,1) = {"
+I
+I
+E
+a
+a
+z
+I
+I
+"}
+(6,1,1) = {"
+I
+I
+I
+L
+L
+I
+I
+I
+"}
+(7,1,1) = {"
+n
+I
+I
+I
+I
+I
+I
+I
+"}
+(8,1,1) = {"
+I
+I
+I
+I
+I
+I
+I
+I
+"}

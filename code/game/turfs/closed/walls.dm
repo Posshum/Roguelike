@@ -12,6 +12,8 @@
 
 	baseturfs = list(/turf/open/floor/rogue/dirt/road)
 
+	is_wall = TRUE
+
 	var/hardness = 40 //lower numbers are harder. Used to determine the probability of a hulk smashing through.
 	var/slicing_duration = 100  //default time taken to slice the wall
 	var/sheet_type = null

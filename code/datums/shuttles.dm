@@ -55,7 +55,7 @@
 				++xcrd
 			--ycrd
 
-/datum/map_template/shuttle/load(turf/T, centered, register=TRUE)
+/datum/map_template/shuttle/load(turf/T, centered, orientation, post_init)
 	. = ..()
 	if(!.)
 		return
@@ -70,8 +70,6 @@
 		place.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
 
 		for(var/obj/docking_port/mobile/port in place)
-			if(register)
-				port.register()
 			if(isnull(port_x_offset))
 				continue
 			switch(port.dir) // Yeah this looks a little ugly but mappers had to do this in their head before

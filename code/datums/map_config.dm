@@ -5,7 +5,7 @@
 
 /datum/map_config
 	// Metadata
-	var/config_filename = "_maps/rockhill.json"
+	var/config_filename = "_maps/dungenerator.json"
 	var/defaulted = TRUE  // set to FALSE by LoadConfig() succeeding
 	// Config from maps.txt
 	var/config_max_users = 0
@@ -14,9 +14,9 @@
 	var/votable = FALSE
 
 	// Config actually from the JSON - should default to Box
-	var/map_name = "Rockhill"
-	var/map_path = "map_files/rockhill"
-	var/map_file = "rockhill.dmm"
+	var/map_name = "Dungeon"
+	var/map_path = "map_files/dungen"
+	var/map_file = "dungeon.dmm"
 
 	var/traits = null
 	var/space_ruin_levels = 0
@@ -25,11 +25,7 @@
 	var/minetype = null
 
 	var/allow_custom_shuttles = TRUE
-	var/shuttles = list(
-		"cargo" = "cargo_rogue",
-		"ferry" = "ferry_base",
-		"whiteship" = "whiteship_box",
-		"emergency" = "emergency_box")
+	var/shuttles = list()
 
 /proc/load_map_config(filename = "data/next_map.json", default_to_box, delete_after, error_if_missing = TRUE)
 	testing("loading map config [filename]")
