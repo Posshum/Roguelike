@@ -20,6 +20,4 @@
 //Checks if a trap can spawn in this location
 /proc/can_spawn_trap(var/turf/T, var/trap)
 	.=TRUE
-	if (locate(/turf/open/water) in dview(3, T))
-		return FALSE
 	return TRUE

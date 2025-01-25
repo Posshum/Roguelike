@@ -191,7 +191,7 @@ var/global/list/core_dungeon_room_templates = list()
 
 	for(var/turf/T in path_turfs)
 		if(prob(40))
-			new /turf/open/floor/rogue/tile/brick(T)
+			new /turf/open/floor/rogue/cobble(T)
 		if(prob(30))
 			new /obj/effect/decal/cleanable/dirt(T) //Dirty Dungeon
 
@@ -227,7 +227,7 @@ var/global/list/core_dungeon_room_templates = list()
 		generate.setLightChance(1)
 		generate.setFloorType(/turf/open/floor/rogue/dirt/road)
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/core))
-		generate.setNumRooms(8) //8 dungeons "core" rooms
+		generate.setNumRooms(rand(6, 12)) //8 dungeons "core" rooms
 		generate.setExtraPaths(2)
 		generate.setMinPathLength(5)
 		generate.setMaxPathLength(80)
@@ -238,7 +238,7 @@ var/global/list/core_dungeon_room_templates = list()
 		generate.setRoomMaxSize(3)
 		generate.setUsePreexistingRegions(TRUE)
 		generate.setDoAccurateRoomPlacementCheck(FALSE)
-		generate.setPathWidth(2)
+		generate.setPathWidth(1)
 		generate.generate()
 		testing("Finished procedural generation of Core Rooms in [(REALTIMEOFDAY - start) / 10] seconds.")
 
@@ -246,7 +246,7 @@ var/global/list/core_dungeon_room_templates = list()
 
 		generate.setArea(locate(4, 4, z), locate(127, 127, z))
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon))
-		generate.setNumRooms(28) // 28 or so smaller rooms
+		generate.setNumRooms(rand(12, 24)) // 28 or so smaller rooms
 		generate.setExtraPaths(2)
 		generate.setMinPathLength(3)
 		generate.setMaxPathLength(65) //Small Rooms are 65 at most appart
@@ -255,13 +255,12 @@ var/global/list/core_dungeon_room_templates = list()
 		generate.setPathEndChance(60)
 		generate.setRoomMinSize(2)
 		generate.setRoomMaxSize(2)
-		generate.setPathWidth(2)
+		generate.setPathWidth(1)
 		generate.setUsePreexistingRegions(TRUE)
 		generate.setDoAccurateRoomPlacementCheck(FALSE)
 		generate.makeSpawns()
 		generate.generate()
 		generate.populateCorridors()
-		testing("Finished procedural generation of Small Rooms in [(REALTIMEOFDAY - start) / 10] seconds.")
 		testing("Finished procedural generation of [name]. [generate.errString(generate.out_error)] -  Z-level [z], in [(REALTIMEOFDAY - start) / 10] seconds.")
 #endif
 

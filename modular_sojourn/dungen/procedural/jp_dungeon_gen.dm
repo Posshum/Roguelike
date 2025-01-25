@@ -674,10 +674,12 @@ return t.is_wall */
 			path-=t
 			t.ChangeTurf(floortype)
 			if(prob(lightSpawnChance))
-				spawn(5)
-					AddLight(t)
+				spawn(300)
+				if(getAdjacent(iswallturf(t)))
+					spawn(5)
+						AddLight(t)
 			path+= t
-			path_turfs += t
+			path_turfs += t	
 
 		region1.addTurfs(path)
 
@@ -1013,7 +1015,7 @@ Make a new jp_DungeonRegion, and set its reference to its generator object
 	Add a list of turfs to the region, optionally without adding the walls around
 	them to the list of borders
 */
-/obj/procedural/jp_DungeonRegion/proc/addTurfs(list/turf/l, noborder=0)
+/obj/procedural/jp_DungeonRegion/proc/addTurfs(list/turf/l, noborder=1)
 	for(var/turf/t in l)
 		if(t in border) border-=t
 		if(!(t in contained))
@@ -1273,7 +1275,7 @@ the arms of the plus sign - there are only four.
 
 /obj/procedural/jp_DungeonRoom/preexist/square/submap/finalise()
 	if(my_map)
-		my_map.load(centre, centered = TRUE, orientation = SOUTH, post_init = 0)
+		my_map.load(centre, centered = TRUE, orientation = SOUTH, post_init = 1)
 	else
 		gen.out_error = gen.ERROR_NO_SUBMAPS
 

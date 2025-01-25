@@ -13,9 +13,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientdronedusk = null
 	always_unpowered = TRUE
 	poweralm = FALSE
-	power_environ = TRUE
-	power_equip = TRUE
-	power_light = TRUE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 //	var/previous_ambient = ""

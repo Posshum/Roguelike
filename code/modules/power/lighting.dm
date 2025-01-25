@@ -732,9 +732,8 @@
 /obj/machinery/light/power_change()
 	SHOULD_CALL_PARENT(FALSE)
 	var/area/A = get_area(src)
-	if(src == null) //To prevent torch annoyance and spam during dungen.
-		return
-	seton(A.lightswitch && A.power_light)
+	seton(A.power_light)
+	//seton(A.lightswitch && A.power_light)
 
 // called when on fire
 

@@ -14,10 +14,4 @@
 	desc = "Deeper. Darker. Marvelous-er."
 	width = 11
 	height = 11
-
-/datum/map_template/dungeon_template/core/medium //Experimental.
-	name = "Dungeon Medium Template"
-	desc = "Dark, Deep, and cold."
-	width = 8
-	height = 8
 	

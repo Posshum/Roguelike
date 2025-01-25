@@ -1,81 +1,90 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/open/floor/rogue/dirt/road,
-/area/rogue)
-"b" = (
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/rogue/dirt,
 /area/rogue)
-"t" = (
+"r" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue)
-"x" = (
+"u" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue)
-"E" = (
-/turf/open/floor/rogue/naturalstone,
-/area/rogue)
-"F" = (
 /turf/closed/mineral/rogue,
 /area/rogue)
-"P" = (
+"v" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/rogue/dirt,
+/area/rogue)
+"z" = (
+/turf/open/floor/rogue/naturalstone,
+/area/rogue)
+"A" = (
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue)
+"D" = (
+/turf/closed/mineral/rogue,
+/area/rogue)
+"H" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue)
+"J" = (
+/turf/open/floor/rogue/dirt/road,
+/area/rogue)
+"R" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
-"S" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/rogue/stonebrick,
-/area/rogue)
-"W" = (
-/turf/open/floor/rogue/dirt,
+"X" = (
+/obj/structure/bed/rogue/shit,
+/mob/living/carbon/human/species/goblin/npc,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue)
 
 (1,1,1) = {"
+A
+u
+J
 a
-x
-a
-W
-a
-S
+J
+r
 "}
 (2,1,1) = {"
-P
-a
-F
-x
-b
-t
+R
+D
+D
+u
+v
+J
 "}
 (3,1,1) = {"
-E
-F
-F
-F
-a
-a
+z
+D
+D
+D
+D
+J
 "}
 (4,1,1) = {"
+J
+v
+A
+D
+X
 a
-x
-F
-F
-x
-b
 "}
 (5,1,1) = {"
+A
+z
+H
+u
 a
-E
-F
-x
-W
 a
 "}
 (6,1,1) = {"
-E
-x
-t
-E
-x
-E
+A
+r
+z
+z
+H
+z
 "}
