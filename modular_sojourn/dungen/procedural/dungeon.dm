@@ -4,33 +4,20 @@
 */
 
 var/global/list/small_dungeon_room_templates = list()
-var/global/list/large_dungeon_room_templates = list()
-
-var/global/list/starting_dungeon_room_templates = list()
-var/global/list/ending_dungeon_room_templates = list()
+var/global/list/core_dungeon_room_templates = list()
 
 /proc/populateDungeonMapLists()
-	if(large_dungeon_room_templates.len || small_dungeon_room_templates.len)
+	if(core_dungeon_room_templates.len || small_dungeon_room_templates.len)
 		return
 	for(var/item in subtypesof(/datum/map_template/dungeon_template/room))
 		var/datum/map_template/dungeon_template/submap = item
 		var/datum/map_template/dungeon_template/S = new submap()
 		small_dungeon_room_templates += S
 
-	for(var/item in subtypesof(/datum/map_template/dungeon_template/large))
+	for(var/item in subtypesof(/datum/map_template/dungeon_template/core))
 		var/datum/map_template/dungeon_template/submap = item
 		var/datum/map_template/dungeon_template/S = new submap()
-		large_dungeon_room_templates += S
-
-	for(var/item in subtypesof(/datum/map_template/dungeon_template/starting))
-		var/datum/map_template/dungeon_template/submap = item
-		var/datum/map_template/dungeon_template/S = new submap()
-		starting_dungeon_room_templates += S
-
-	for(var/item in subtypesof(/datum/map_template/dungeon_template/ending))
-		var/datum/map_template/dungeon_template/submap = item
-		var/datum/map_template/dungeon_template/S = new submap()
-		ending_dungeon_room_templates += S
+		core_dungeon_room_templates += S
 
 /obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon
 	name = "dungeon room"
@@ -38,30 +25,15 @@ var/global/list/ending_dungeon_room_templates = list()
 	..()
 	my_map = pick(small_dungeon_room_templates)
 
-/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/large
+/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/core
 	name = "dungeon core room"
-/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/large/New()
+/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/core/New()
 	..()
-	my_map = pick(large_dungeon_room_templates)
-
-/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/starting
-	name = "dungeon starting room"
-/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/starting/New()
-	..()
-	my_map = pick(starting_dungeon_room_templates)
-
-/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/ending
-	name = "dungeon ending room"
-/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/ending/New()
-	..()
-	my_map = pick(ending_dungeon_room_templates)
-
-/* /proc/check_dungeon_list()
-	return (free_dungeon_ladders.len)  */
+	my_map = pick(core_dungeon_room_templates)
 
 /obj/procedural/jp_DungeonGenerator/dungeon
 	name = "Dungeon Procedural Generator"
-	regen_specific = TRUE
+	regen_specific = FALSE
 	regen_light = /obj/machinery/light/rogue/torchholder/autoattach
 
 
@@ -93,18 +65,18 @@ var/global/list/ending_dungeon_room_templates = list()
 	return list()
 
 /*
-	Generates burrow-linked ladders
+	Generates burrow-linked ladders -- Nah how about starting spawns?
 */
 
-/* /obj/procedural/jp_DungeonGenerator/dungeon/proc/makeLadders()
-	var/ladders_to_place = 20
-	if(numRooms < ladders_to_place)
+/obj/procedural/jp_DungeonGenerator/dungeon/proc/makeSpawns()
+	var/spawners_to_place = 1
+	if(numRooms < spawners_to_place)
 		return
 	var/list/obj/procedural/jp_DungeonRoom/done_rooms = list()
-	while(ladders_to_place > 0)
+	while(spawners_to_place > 0)
 		if(numRooms > 1)
 			if(done_rooms.len == out_rooms.len)
-				testing("dungeon generator went through all rooms, but couldn't place all ladders! Ladders left - [ladders_to_place]")
+				testing("dungeon generator went through all rooms, but couldn't place all spawners! Spawners left - [spawners_to_place]")
 				break
 		var/obj/procedural/jp_DungeonRoom/picked_room = pick(out_rooms)
 		if(picked_room in done_rooms)
@@ -124,7 +96,7 @@ var/global/list/ending_dungeon_room_templates = list()
 				continue */
 
 			//To be valid, the floor needs to have a wall in a cardinal direction
-			for (var/d in cardinals)
+			for (var/d in GLOB.cardinals)
 				var/turf/T = get_step(F, d)
 				if (T.is_wall)
 					//Its got a wall!
@@ -135,12 +107,16 @@ var/global/list/ending_dungeon_room_templates = list()
 			done_rooms += picked_room
 			continue
 
-		//var/turf/ladder_turf = pick(viable_turfs)
-		//var/obj/structure/multiz/ladder/up/dungeon/newladder = new/obj/structure/multiz/ladder/up/dungeon(ladder_turf)
-		//free_dungeon_ladders += newladder
-		//ladders_to_place--
+	//We use the ladder turf as the placement to spawn everyone at round start. Since it's a small coop experience, spawning them together wont be an issue.
+		var/turf/ladder_turf = pick(viable_turfs)
+		new/obj/structure/ladder(ladder_turf)
+		new/obj/effect/landmark/start(ladder_turf)
+		new/obj/effect/landmark/latejoin(ladder_turf)
+		new/obj/effect/landmark/observer_start(ladder_turf)
+		
+		spawners_to_place--
 		done_rooms += picked_room
- */
+
 
 
 /*
@@ -192,7 +168,7 @@ var/global/list/ending_dungeon_room_templates = list()
 /obj/procedural/jp_DungeonGenerator/dungeon/proc/populateCorridors()
 	var/niche_count = 20
 	var/try_count = niche_count * 7 //In case it somehow zig-zags all of the corridors and stucks in a loop
-	var/trap_count = 200
+	var/trap_count = rand(50, 150)
 	var/list/path_turfs_copy = path_turfs.Copy()
 	while(niche_count > 0 && try_count > 0)
 		try_count = try_count - 1
@@ -204,13 +180,21 @@ var/global/list/ending_dungeon_room_templates = list()
 		trap_count = trap_count - 1
 		var/turf/N = pick(path_turfs_copy)
 		path_turfs_copy -= N
-/* 		if(prob(60))
+		if(prob(60))
 			new /obj/random/traps(N)
-		else
-			new /obj/random/mob/psi_monster(N) */
+
+		else if(prob(30))
+			new /obj/random/mob/any_roguemob(N) 
+		
+		else if(prob(10))
+			new /obj/random/mob/rare_roguemob(N)
+
 	for(var/turf/T in path_turfs)
+		if(prob(40))
+			new /turf/open/floor/rogue/tile/brick(T)
 		if(prob(30))
 			new /obj/effect/decal/cleanable/dirt(T) //Dirty Dungeon
+
 
 
 
@@ -234,12 +218,15 @@ var/global/list/ending_dungeon_room_templates = list()
 		testing_variable(start, REALTIMEOFDAY)
 		var/obj/procedural/jp_DungeonGenerator/dungeon/generate = new /obj/procedural/jp_DungeonGenerator/dungeon(src)
 		testing("Beginning procedural generation of [name] -  Z-level [z].")
+
+		sleep(90)
+
 		generate.name = name
 		generate.setArea(locate(16, 16, z), locate(110, 110, z))
-		generate.setWallType(/turf/closed/wall/mineral/rogue/stonebrick)
+		generate.setWallType(list(/turf/closed/wall/mineral/rogue/stonebrick, /turf/closed/wall/mineral/rogue/craftstone))
 		generate.setLightChance(1)
 		generate.setFloorType(/turf/open/floor/rogue/dirt/road)
-		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/large))
+		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/core))
 		generate.setNumRooms(8) //8 dungeons "core" rooms
 		generate.setExtraPaths(2)
 		generate.setMinPathLength(5)
@@ -247,9 +234,11 @@ var/global/list/ending_dungeon_room_templates = list()
 		generate.setMinLongPathLength(5)
 		generate.setLongPathChance(10)
 		generate.setPathEndChance(100)
-		generate.setRoomMinSize(4)
-		generate.setRoomMaxSize(4)
-		generate.setPathWidth(1)
+		generate.setRoomMinSize(3)
+		generate.setRoomMaxSize(3)
+		generate.setUsePreexistingRegions(TRUE)
+		generate.setDoAccurateRoomPlacementCheck(FALSE)
+		generate.setPathWidth(2)
 		generate.generate()
 		testing("Finished procedural generation of Core Rooms in [(REALTIMEOFDAY - start) / 10] seconds.")
 
@@ -257,55 +246,22 @@ var/global/list/ending_dungeon_room_templates = list()
 
 		generate.setArea(locate(4, 4, z), locate(127, 127, z))
 		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon))
-		generate.setNumRooms(32) // 32 or so smaller rooms
+		generate.setNumRooms(28) // 28 or so smaller rooms
 		generate.setExtraPaths(2)
-		generate.setMinPathLength(1)
+		generate.setMinPathLength(3)
 		generate.setMaxPathLength(65) //Small Rooms are 65 at most appart
 		generate.setMinLongPathLength(5)
 		generate.setLongPathChance(10)
 		generate.setPathEndChance(60)
 		generate.setRoomMinSize(2)
 		generate.setRoomMaxSize(2)
-		generate.setPathWidth(3)
+		generate.setPathWidth(2)
 		generate.setUsePreexistingRegions(TRUE)
-		generate.setDoAccurateRoomPlacementCheck(TRUE)
-		generate.generate()
-		testing("Finished procedural generation of Small Rooms in [(REALTIMEOFDAY - start) / 10] seconds.")
-
-		sleep(90)
-
-		generate.setArea(locate(4, 8, z), locate(124, 124, z))
-		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/starting))
-		generate.setNumRooms(1) 
-		generate.setExtraPaths(3)
-		generate.setMinPathLength(1)
-		generate.setMaxPathLength(65) 
-		generate.setMinLongPathLength(5)
-		generate.setLongPathChance(10)
-		generate.setPathEndChance(0)
-		generate.setRoomMinSize(3)
-		generate.setRoomMaxSize(3)
-		generate.setPathWidth(1)
-		generate.generate()
-		testing("Finished procedural generation of Entrance Room in [(REALTIMEOFDAY - start) / 10] seconds.")
-
-		sleep(90)
-
-		generate.setArea(locate(20, 20, z), locate(100, 100, z))
-		generate.setAllowedRooms(list(/obj/procedural/jp_DungeonRoom/preexist/square/submap/dungeon/ending))
-		generate.setNumRooms(3)
-		generate.setExtraPaths(3)
-		generate.setMinPathLength(1)
-		generate.setMaxPathLength(65) 
-		generate.setMinLongPathLength(5)
-		generate.setLongPathChance(10)
-		generate.setPathEndChance(0)
-		generate.setRoomMinSize(3)
-		generate.setRoomMaxSize(3)
-		generate.setPathWidth(1)
+		generate.setDoAccurateRoomPlacementCheck(FALSE)
+		generate.makeSpawns()
 		generate.generate()
 		generate.populateCorridors()
-		testing("Finished procedural generation of Exit Room(s).")
+		testing("Finished procedural generation of Small Rooms in [(REALTIMEOFDAY - start) / 10] seconds.")
 		testing("Finished procedural generation of [name]. [generate.errString(generate.out_error)] -  Z-level [z], in [(REALTIMEOFDAY - start) / 10] seconds.")
 #endif
 

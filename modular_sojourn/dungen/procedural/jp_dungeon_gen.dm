@@ -495,7 +495,8 @@ return t.is_wall */
 	var/obj/procedural/jp_DungeonRegion/r1 = pick(R)
 	regs += r1
 	var/obj/procedural/jp_DungeonRegion/r2 = null
-	var/r_distance = 127 // At this time, get_dist() never returns a value greater than 127 - thank you, byond, very cool.
+	//This has been changed to accept beyond 127 as of 515!!!
+	var/r_distance = 99999 // At this time, get_dist() never returns a value greater than 127 - thank you, byond, very cool.
 	for(var/obj/procedural/jp_DungeonRegion/region in R)
 		if(r1 == region)
 			continue

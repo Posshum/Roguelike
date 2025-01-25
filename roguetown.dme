@@ -3672,6 +3672,8 @@
 #include "_maps\map_files\dungen\submaps\templates.dm"
 #include "_maps\map_files\dungen\submaps\small\small_rooms.dm"
 #include "_maps\map_files\dungen\submaps\core\large_rooms.dm"
-#include "_maps\map_files\dungen\submaps\starting\starting_rooms.dm"
-#include "_maps\map_files\dungen\submaps\ending\ending_rooms.dm"
+#include "_maps\map_files\dungen\submaps\core\medium\medium_rooms.dm"
+#include "code\modules\procedural\random.dm"
+#include "code\modules\procedural\mobs\random_mobs.dm"
+#include "code\modules\procedural\items\random_traps.dm"
 // END_INCLUDE

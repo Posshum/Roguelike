@@ -539,7 +539,8 @@
 				update_icon()
 				if(soundloop)
 					soundloop.start()
-				addtimer(CALLBACK(src, PROC_REF(trigger_weather)), rand(5,20))
+					//Disable for now; We are in a dungeon and this is causing a lot of runtimes.
+				// addtimer(CALLBACK(src, PROC_REF(trigger_weather)), rand(5,20))
 				return TRUE
 
 /obj/machinery/light/rogue/torchholder/Initialize()

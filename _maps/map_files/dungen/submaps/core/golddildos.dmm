@@ -3,153 +3,318 @@
 /turf/open/floor/rogue/tile/brick,
 /area/template_noop)
 "b" = (
-/turf/closed/wall/mineral/rogue/stonebrick,
+/turf/closed/wall/mineral/rogue/wooddark/horizontal,
+/area/template_noop)
+"c" = (
+/turf/open/floor/rogue/dirt/road,
+/area/template_noop)
+"d" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"f" = (
+/obj/machinery/light/rogue/torchholder/r,
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1;
+	icon_state = "pool1"
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"g" = (
+/obj/structure/bed/rogue,
+/obj/item/dildo/gold{
+	pixel_y = 9;
+	pixel_x = 6
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1;
+	icon_state = "pool5"
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1;
+	icon_state = "itemblood"
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"i" = (
+/obj/structure/closet/crate/chest/neu,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"j" = (
+/obj/structure/chair/wood/rogue{
+	dir = 8
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"l" = (
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1;
+	icon_state = "pool3"
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"m" = (
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/template_noop)
+"p" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/kitchen/ironfork{
+	pixel_y = 3;
+	pixel_x = 8
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"r" = (
+/obj/structure/rack/rogue/shelf/big{
+	pixel_x = 31
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/water{
+	pixel_x = 28;
+	pixel_y = 21
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"u" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"v" = (
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 8
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"x" = (
+/obj/structure/mineral_door/wood/deadbolt,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"B" = (
+/obj/structure/table/wood,
+/obj/item/rogueweapon/huntingknife/idagger{
+	pixel_y = 4
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"C" = (
+/obj/machinery/light/rogue/wallfire{
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"E" = (
+/turf/closed/wall/mineral/rogue/wooddark/vertical,
+/area/template_noop)
+"F" = (
+/obj/random/mob/skeleton,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"G" = (
+/obj/structure/bookcase/random/adult,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"H" = (
+/obj/item/dildo/gold{
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/obj/machinery/light/rogue/torchholder/r,
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1;
+	icon_state = "handblood"
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"I" = (
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1;
+	icon_state = "floor7-old"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/template_noop)
+"J" = (
+/turf/closed/wall/mineral/rogue/wooddark/end,
+/area/template_noop)
+"L" = (
+/obj/item/dildo/gold{
+	pixel_y = -1;
+	pixel_x = 23
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1;
+	icon_state = "pool3"
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"Q" = (
+/obj/effect/decal/cleanable/blood/drip{
+	dir = 1;
+	icon_state = "floor7-old"
+	},
+/turf/open/floor/rogue/tile/brick,
 /area/template_noop)
 "T" = (
-/obj/item/dildo/gold,
+/obj/random/mob/skeleton,
+/turf/open/floor/rogue/dirt/road,
+/area/template_noop)
+"W" = (
+/obj/structure/rack/rogue/shelf/big{
+	pixel_x = 31
+	},
+/obj/item/reagent_containers/glass/cup/wooden{
+	pixel_x = 34;
+	pixel_y = 18
+	},
 /turf/open/floor/rogue/tile/brick,
 /area/template_noop)
 
 (1,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
 "}
 (2,1,1) = {"
-a
-b
-b
-a
-a
-a
-a
-a
-b
-b
-a
+c
+J
+E
+E
+E
+E
+E
+E
+E
+J
+c
 "}
 (3,1,1) = {"
-a
+c
 b
+i
+p
+B
+a
+G
+G
+d
 b
-a
-a
-T
-a
-a
-b
-b
-a
+c
 "}
 (4,1,1) = {"
+c
+b
+a
+j
+j
 a
 a
 a
-T
-a
-a
-a
-a
-T
-a
-a
+d
+b
+c
 "}
 (5,1,1) = {"
+c
+b
+C
+F
 a
 a
 a
+Q
 a
-a
-a
-a
-a
-a
-a
-a
+J
+c
 "}
 (6,1,1) = {"
+c
+b
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+l
+f
+u
+r
+W
+F
+x
+I
 "}
 (7,1,1) = {"
-a
-a
-T
-a
-a
-a
-T
-a
-a
-a
-a
+c
+b
+v
+m
+J
+E
+E
+E
+E
+J
+c
 "}
 (8,1,1) = {"
+c
+b
 a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+L
+b
+c
+c
+c
+c
+c
+c
 "}
 (9,1,1) = {"
-a
+c
 b
+H
+g
 b
-a
-a
-a
+c
 T
-a
-b
-b
-a
+c
+c
+T
+c
 "}
 (10,1,1) = {"
-a
-b
-b
-a
-a
-a
-a
-a
-b
-b
-a
+c
+J
+m
+m
+J
+c
+c
+c
+c
+c
+c
 "}
 (11,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
+c
 "}

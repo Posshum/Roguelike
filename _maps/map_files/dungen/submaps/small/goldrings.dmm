@@ -2,59 +2,130 @@
 "a" = (
 /turf/open/floor/rogue/tile/brick,
 /area/template_noop)
+"b" = (
+/obj/structure/rack/rogue/shelf{
+	pixel_y = 29
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"e" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
 "f" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/template_noop)
 "g" = (
-/obj/item/clothing/ring/gold,
+/obj/structure/rack/rogue/shelf,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"h" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"n" = (
+/obj/machinery/light/rogue/torchholder/c{
+	pixel_y = 0;
+	dir = 1
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"z" = (
+/obj/item/reagent_containers/food/snacks/rogue/cheddarwedge/aged{
+	pixel_y = 8;
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/snacks/rogue/cheddarwedge/aged{
+	pixel_y = 7;
+	pixel_x = -6
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/template_noop)
+"B" = (
+/turf/open/floor/rogue/dirt,
+/area/template_noop)
+"C" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/ring/gold{
+	pixel_y = -14;
+	pixel_x = 10
+	},
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"F" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/human/species/goblin/npc,
+/turf/open/floor/rogue/tile/brick,
+/area/template_noop)
+"R" = (
+/obj/item/reagent_containers/glass/bottle/rogue/redwine{
+	pixel_x = 2;
+	pixel_y = 13
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/redwine{
+	pixel_x = -6;
+	pixel_y = 11
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/template_noop)
+"S" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/dirt,
+/area/template_noop)
+"U" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/rogue/tile/brick,
 /area/template_noop)
 
 (1,1,1) = {"
+S
 a
-a
-a
-a
-a
-a
+B
+S
+U
+B
 "}
 (2,1,1) = {"
-a
+B
+R
+b
+U
 f
-a
-a
-f
-a
+S
 "}
 (3,1,1) = {"
-g
+S
+e
+C
+F
 a
-a
-a
-g
-a
+h
 "}
 (4,1,1) = {"
-a
-a
-a
-a
-a
-a
+B
+h
+F
+h
+h
+h
 "}
 (5,1,1) = {"
 a
-f
+z
 g
-a
+n
 f
 a
 "}
 (6,1,1) = {"
-a
-a
-a
-a
-a
-a
+S
+B
+S
+B
+h
+B
 "}

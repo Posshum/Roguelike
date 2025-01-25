@@ -171,6 +171,9 @@
 	desc = ""
 	icon_state = "trap-fire"
 
+/obj/structure/trap/fire/camouflage
+	alpha = 40
+
 /obj/structure/trap/fire/trap_effect(mob/living/L)
 	to_chat(L, span_danger("<B>Spontaneous combustion!</B>"))
 	L.Paralyze(20)
@@ -197,7 +200,7 @@
 /obj/structure/trap/damage/trap_effect(mob/living/L)
 	to_chat(L, span_danger("<B>The ground quakes beneath your feet!</B>"))
 	L.Paralyze(100)
-	L.adjustBruteLoss(35)
+	L.adjustBruteLoss(80)
 	var/obj/structure/flora/rock/giant_rock = new(get_turf(src))
 	QDEL_IN(giant_rock, 200)
 

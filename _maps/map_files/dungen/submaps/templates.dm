@@ -9,20 +9,15 @@
 	var/room_tag = null
 
 
-/datum/map_template/dungeon_template/large
-	name = "Dungeon Template"
+/datum/map_template/dungeon_template/core
+	name = "Dungeon Large Template"
 	desc = "Deeper. Darker. Marvelous-er."
 	width = 11
 	height = 11
 
-/datum/map_template/dungeon_template/starting
-	name = "Dungeon Starting"
-	desc = "And down and down and..."
+/datum/map_template/dungeon_template/core/medium //Experimental.
+	name = "Dungeon Medium Template"
+	desc = "Dark, Deep, and cold."
 	width = 8
 	height = 8
 	
-/datum/map_template/dungeon_template/ending
-	name = "Dungeon Ending"
-	desc = "Further we go."
-	width = 8
-	height = 8

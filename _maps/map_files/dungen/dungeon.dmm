@@ -2,10 +2,6 @@
 "a" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/under/cave/mazedungeon)
-"L" = (
-/obj/procedural/dungenerator/dungeon,
-/turf/closed/indestructible/rock,
-/area/rogue/under/cave/mazedungeon)
 "U" = (
 /turf/closed/indestructible/rock,
 /area/rogue/under/cave/mazedungeon)
@@ -145,7 +141,7 @@ U
 U
 U
 U
-L
+U
 "}
 (2,1,1) = {"
 U
