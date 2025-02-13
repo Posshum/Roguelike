@@ -658,7 +658,7 @@
 				set_resting(FALSE, FALSE)
 				return TRUE
 		else
-			src.visible_message(span_warning("[src] tries to stand up."))
+			src.visible_message(span_warning("[src] struggles to stand up."))
 			return FALSE
 
 /mob/living/proc/toggle_rest()

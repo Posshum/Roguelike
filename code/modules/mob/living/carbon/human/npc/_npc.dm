@@ -23,7 +23,7 @@
 	var/next_stand = 0
 	var/next_passive_detect = 0
 	var/flee_in_pain = FALSE
-	var/stand_attempts = 0
+	var/stand_attempts = 2
 	var/ai_currently_active = FALSE
 
 	var/returning_home = FALSE
@@ -56,7 +56,7 @@
 			resist()
 			resisting = FALSE
 		if(!resisting)
-			if(!(mobility_flags & MOBILITY_STAND) && (stand_attempts < 3))
+			if(!(mobility_flags & MOBILITY_STAND) && (stand_attempts >= 1))
 				npc_stand()
 			else
 				if(!handle_combat())
@@ -73,11 +73,12 @@
 	// the sane way to do this would be to try and check if we can even realistically stand 
 	resisting = TRUE
 	if(stand_up())
-		stand_attempts = 0
+		stand_attempts--
 		resisting = FALSE
 		return TRUE
 	else
-		stand_attempts += rand(1,3)
+		//Default back to 2 after standing up fully.
+		stand_attempts = 2
 		resisting = FALSE
 		return FALSE
 
@@ -163,7 +164,7 @@
 			turf_of_target = get_step_multiz(turf_of_target, UP)
 		if(turf_of_target?.z != target_z) //too far away
 			back_to_idle()
-			return 0
+			return 0 
 	// failed to path correctly so just try to head straight for a bit
 	walk_to(src,turf_of_target,0,update_movespeed())
 	sleep(1)
@@ -290,6 +291,8 @@
 						return TRUE
 				m_intent = MOVE_INTENT_WALK
 				INVOKE_ASYNC(src, PROC_REF(walk2derpless), target)
+				//Randomly pick between dodging and parrying when hunting a target.
+				d_intent = pick(INTENT_DODGE, INTENT_PARRY)
 
 			if(!get_active_held_item() && !get_inactive_held_item() && !mind?.has_antag_datum(/datum/antagonist/zombie))
 				// pickup any nearby weapon
@@ -301,12 +304,14 @@
 					if(I.force > 7)
 						equip_item(I)
 
-//			// switch targets
-//			if(prob(15))
-//				for(var/mob/living/L in around)
-//					if((L != target) && should_target(L) && (L.stat == CONSCIOUS))
-//						retaliate(L)
-//						return TRUE
+			// switch targets
+			if(prob(15))
+				//Grab the first target in dview, ignoring darkness.
+				var/list/around = view(7, src)
+				for(var/mob/living/L in around)
+					if((L != target) && should_target(L) && (L.stat == CONSCIOUS))
+						retaliate(L)
+						return TRUE
 
 			// if can't reach target for long enough, go idle
 			if(frustration >= 15)
@@ -378,10 +383,13 @@
 		swap_hand()
 		Weapon = get_active_held_item()
 		OffWeapon = get_inactive_held_item()
-	if(!(mobility_flags & MOBILITY_STAND))
+	if((mobility_flags & MOBILITY_STAND))
 		aimheight_change(rand(10,19))
-	else
-		aimheight_change(rand(10,19))
+	else // If we are NOT standing... Try and aim for the legs!
+		if((L.mobility_flags & MOBILITY_STAND))
+			aimheight_change(rand(1,4))
+		else  // If our target is now on the ground, aim for their vitals!
+			aimheight_change(rand(10,19))
 
 	// attack with weapon if we have one
 	if(Weapon)
@@ -429,7 +437,7 @@
 	if(mode != AI_OFF)
 		if (L.alpha == 0 && L.rogue_sneaking)
 			// we just got hit by something hidden so try and find them
-			if (prob(5))
+			if (prob(25))
 				visible_message(span_notice("[src] begins searching around frantically..."))
 			var/extra_chance = (health <= maxHealth * 50) ? 30 : 0 // if we're below half health, we're way more alert
 			if (!npc_detect_sneak(L, extra_chance))

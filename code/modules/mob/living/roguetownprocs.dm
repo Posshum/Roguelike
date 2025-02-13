@@ -57,6 +57,8 @@
 		else
 			if(user.client?.prefs.showrolls)
 				to_chat(user, span_warning("Double accuracy fail! [chance2hit]%"))
+			if(!(user.mobility_flags & MOBILITY_STAND))
+				return BODY_ZONE_PRECISE_GROIN
 			return BODY_ZONE_CHEST
 
 /mob/proc/get_generic_parry_drain()
