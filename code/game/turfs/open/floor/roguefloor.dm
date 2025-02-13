@@ -502,6 +502,18 @@
 	neighborlay = "roadedge"
 	slowdown = 0
 
+/turf/open/floor/rogue/dirt/mud
+	name = "mud"
+	desc = "The soil is sodden with the tears of the earth."
+	icon_state = "mud1"
+	muddy = TRUE
+	slowdown = 2
+	footstep = FOOTSTEP_MUD
+	barefootstep = FOOTSTEP_MUD
+	heavyfootstep = FOOTSTEP_MUD
+	track_prob = 20 //Hearthstone port.
+	bloodiness = 20
+
 /turf/open/floor/rogue/dirt/road/attack_right(mob/user)
 	return
 
