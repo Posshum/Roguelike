@@ -1442,7 +1442,6 @@
 /turf/open/water/swamp/deep,
 /area/rogue/under/cave/dungeon1/gethsmane/inner)
 "lM" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/spear,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/woods)
 "lN" = (
@@ -2208,7 +2207,6 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
 "se" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/bow,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/town/basement)
 "sh" = (
@@ -2278,7 +2276,6 @@
 	dir = 8;
 	icon_state = "border"
 	},
-/mob/living/simple_animal/hostile/rogue/skeleton/spear,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/shelter/woods)
 "sO" = (
@@ -4467,7 +4464,6 @@
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods)
 "Ly" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/spear,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/shelter/woods)
 "Lz" = (
@@ -5878,7 +5874,6 @@
 /obj/effect/decal/cobbleedge{
 	dir = 9
 	},
-/mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/under/town/basement)
 "XY" = (
