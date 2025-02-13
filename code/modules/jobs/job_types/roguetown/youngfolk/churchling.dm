@@ -17,7 +17,7 @@
 	give_bank_account = TRUE
 	min_pq = -10
 	max_pq = null
-	round_contrib_points = 2
+	
 	cmode_music = 'sound/music/combat_church.ogg'
 
 /datum/outfit/job/roguetown/churchling/pre_equip(mob/living/carbon/human/H)

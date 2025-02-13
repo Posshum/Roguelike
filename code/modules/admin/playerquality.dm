@@ -28,11 +28,11 @@
 			return "<span style='color: #58a762;'>Nice</span>"
 		if(the_pq >= -4)
 			return "Normal"
-		if(the_pq >= -30)
+		if(the_pq >= -20)
 			return "<span style='color: #be6941;'>Poor</span>"
-		if(the_pq >= -70)
+		if(the_pq >= -50)
 			return "<span style='color: #cd4232;'>Terrible</span>"
-		if(the_pq >= -99)
+		if(the_pq >= -70)
 			return "<span style='color: #e2221d;'>Abysmal</span>"
 		if(the_pq <= -100)
 			return "<span style='color: #ff00ff;'>Shitter</span>"
@@ -231,38 +231,3 @@
 	if(!curcomm)
 		curcomm = 0
 	return curcomm
-
-/proc/add_roundpoints(amt, key) //Each round contributor point counts as 0.1 of a PQ.
-	if(!key)
-		return
-	var/curcomm = 0
-	var/json_file = file("data/player_saves/[copytext(key,1,2)]/[key]/rcp.json")
-	if(!fexists(json_file))
-		WRITE_FILE(json_file, "{}")
-	var/list/json = json_decode(file2text(json_file))
-	if(json["RCP"])
-		curcomm = json["RCP"]
-
-	curcomm += amt
-	json["RCP"] = curcomm
-	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(json))
-
-	if(curcomm < 100 || get_playerquality(key) < 10)
-		adjust_playerquality(round(amt/10,0.1), ckey(key))
-
-/proc/get_roundpoints(key)
-	if(!key)
-		return
-	var/curcomm = 0
-	var/json_file = file("data/player_saves/[copytext(key,1,2)]/[key]/rcp.json")
-	if(!fexists(json_file))
-		WRITE_FILE(json_file, "{}")
-	var/list/json = json_decode(file2text(json_file))
-
-	if(json["RCP"])
-		curcomm = json["RCP"]
-	if(!curcomm)
-		curcomm = 0
-	return curcomm
-

@@ -15,7 +15,7 @@
 	give_bank_account = 11
 	min_pq = 0
 	max_pq = null
-	round_contrib_points = 3
+	
 
 /datum/outfit/job/roguetown/armorsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -79,7 +79,7 @@
 	give_bank_account = 11
 	min_pq = 0
 	max_pq = null
-	round_contrib_points = 3
+	
 
 /datum/outfit/job/roguetown/weaponsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -142,7 +142,7 @@
 	give_bank_account = 11
 	min_pq = 0
 	max_pq = null
-	round_contrib_points = 3
+	
 
 /datum/outfit/job/roguetown/blacksmith/pre_equip(mob/living/carbon/human/H)
 	..()
