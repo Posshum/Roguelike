@@ -24,6 +24,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	// Commend variable on prefs instead of client to prevent reconnect abuse (is persistant on prefs, opposed to not on client)
 	var/commendedsomeone = FALSE
 
+	//Honor is saved per character instance, rather than per client to allow different honor ranks between characters and allow PQ to be unphased.
+	var/honor = 5
+
 	//Antag preferences
 	var/list/be_special = list()		//Special role selection
 	var/tmp/old_be_special = 0			//Bitflag version of be_special, used to update old savefiles and nothing more
@@ -286,6 +289,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:right'>"
+			dat += "<b>Character Honor</b>:[honor]"
 			dat += "</td>"
 
 			dat += "</table>"

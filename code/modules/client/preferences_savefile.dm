@@ -352,7 +352,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["real_name"]			>> real_name
 	S["gender"]				>> gender
 	S["domhand"]			>> domhand
-//	S["alignment"]			>> alignment
 	S["age"]				>> age
 	S["hair_color"]			>> hair_color
 	S["facial_hair_color"]	>> facial_hair_color
@@ -494,6 +493,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	voice_color		= voice_color
 	voice_pitch		= voice_pitch
 	skin_tone		= skin_tone
+	honor			= honor
 	backpack			= sanitize_inlist(backpack, GLOB.backpacklist, initial(backpack))
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
@@ -549,6 +549,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["real_name"]			, real_name)
 	WRITE_FILE(S["gender"]				, gender)
 	WRITE_FILE(S["domhand"]				, domhand)
+	WRITE_FILE(S["honor"] 				, honor)
 //	WRITE_FILE(S["alignment"]			, alignment)
 	WRITE_FILE(S["age"]					, age)
 	WRITE_FILE(S["hair_color"]			, hair_color)
@@ -617,6 +618,21 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	return TRUE
 
+//Honor is held within the preferences datum so that we save Honor individually per character, unlike PQ.
+
+/datum/preferences/proc/save_character_honor()
+	if(!path)
+		return FALSE
+	var/savefile/S = new /savefile(path)
+	if(!S)
+		return FALSE
+	S.cd = "/character[default_slot]"
+	WRITE_FILE(S["honor"]			, honor)
+
+/datum/preferences/proc/_load_honor(S)
+	S["honor"]			>> honor
+
+//datum/preferences/proc/adjust_character_honor(S)
 
 #undef SAVEFILE_VERSION_MAX
 #undef SAVEFILE_VERSION_MIN
