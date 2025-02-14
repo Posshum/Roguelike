@@ -145,7 +145,6 @@
 /turf/open/floor/carpet/red,
 /area/rogue/outdoors/beach/forest)
 "ay" = (
-/mob/living/carbon/human/species/skeleton/npc/no_equipment,
 /obj/structure/roguemachine/titan{
 	density = 0;
 	pixel_y = 32
@@ -171,7 +170,6 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/shelter)
 "aB" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall";
 	dir = 1
@@ -210,7 +208,6 @@
 	},
 /area/rogue/indoors/cave)
 "aH" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /obj/structure/chair/wood/rogue{
 	icon_state = "chair2";
 	dir = 1
@@ -846,7 +843,6 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
 "fn" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/beach)
 "fo" = (
@@ -1124,7 +1120,6 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach/forest)
 "hy" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/beach)
 "hz" = (
@@ -1858,7 +1853,6 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
 "ov" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/bow,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
 "oC" = (
@@ -2515,7 +2509,6 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/cave)
 "tD" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/bow,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/beach/forest)
 "tL" = (
@@ -2819,7 +2812,6 @@
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors/cave)
 "wm" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/bow,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
 "wn" = (
@@ -4041,7 +4033,6 @@
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/outdoors/beach/forest)
 "GQ" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/beach/forest)
 "GS" = (
@@ -5009,7 +5000,6 @@
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/cave)
 "Oz" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/spear,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/shelter)
 "OB" = (
@@ -5333,7 +5323,6 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/cave)
 "Re" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter)
 "Rf" = (
@@ -5396,7 +5385,6 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/shelter)
 "RF" = (
-/mob/living/simple_animal/hostile/rogue/skeleton/bow,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/beach)
 "RH" = (

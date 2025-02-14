@@ -1,7 +1,7 @@
 GLOBAL_LIST_EMPTY(billagerspawns)
 
-GLOBAL_VAR_INIT(adventurer_hugbox_duration, 40 SECONDS)
-GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
+GLOBAL_VAR_INIT(adventurer_hugbox_duration, 5 SECONDS)
+GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 5 MINUTES)
 
 /datum/job/roguetown/adventurer
 	title = "Adventurer"

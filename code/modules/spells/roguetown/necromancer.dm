@@ -123,17 +123,17 @@
 	var/turf/T = get_turf(targets[1])
 	var/skeleton_roll = rand(1,100)
 	if(isopenturf(T))
-		switch(skeleton_roll)
+		switch(skeleton_roll) //Make sure to add carbon skeletons here
 			if(1 to 20)
-				new /mob/living/simple_animal/hostile/rogue/skeleton/axe(T, user, cabal_affine)
+				new null
 			if(21 to 40)
-				new /mob/living/simple_animal/hostile/rogue/skeleton/spear(T, user, cabal_affine)
+				new null
 			if(41 to 60)
-				new /mob/living/simple_animal/hostile/rogue/skeleton/guard(T, user, cabal_affine)
+				new null
 			if(61 to 80)
-				new /mob/living/simple_animal/hostile/rogue/skeleton/bow(T, user, cabal_affine)
+				new null
 			if(81 to 100)
-				new /mob/living/simple_animal/hostile/rogue/skeleton(T, user, cabal_affine)
+				new null
 		return TRUE
 	else
 		to_chat(user, span_warning("The targeted location is blocked. My summon fails to come forth."))

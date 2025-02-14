@@ -27,6 +27,7 @@ This is an absolute clusterfuck, but its my clusterfuck -aa07
 
 SUBSYSTEM_DEF(discord)
 	name = "Discord"
+	flags = SS_NO_INIT|SS_NO_FIRE
 	wait = 3000
 	init_order = INIT_ORDER_DISCORD
 
